@@ -19,8 +19,10 @@ enum ferris_layers {
 #define KC_S_O   LSFT_T(KC_O)
 #define KC_C_X   LCTL_T(KC_X)
 #define KC_A_C   LALT_T(KC_C)
+#define KC_G_D   LGUI_T(KC_D)
 #define KC_A_COM LALT_T(KC_COMM)
 #define KC_C_DOT LCTL_T(KC_DOT)
+#define KC_G_H   LGUI_T(KC_H)
 // Layer keys
 #define KC_L5_R  LT(_NUMBERS,    KC_R)
 #define KC_L1_S  LT(_NAVIGATION, KC_S)
@@ -58,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLMAK_DH] = LAYOUT(
         KC_CS_Q,  KC_W,     KC_F,     KC_P,     KC_B,           KC_J,     KC_L,     KC_U,     KC_Y,     KC_CS_HY,
         KC_S_A,   KC_L5_R,  KC_L1_S,  KC_L3_T,  KC_G,           KC_M,     KC_L4_N,  KC_L2_E,  KC_L6_I,  KC_S_O,
-        KC_Z,     KC_C_X,   KC_A_C,   KC_D,     KC_V,           KC_K,     KC_H,     KC_A_COM, KC_C_DOT, KC_UNDS,
+        KC_Z,     KC_C_X,   KC_A_C,   KC_G_D,   KC_V,           KC_K,     KC_G_H,   KC_A_COM, KC_C_DOT, KC_UNDS,
                                       KC_C_C,   KC_BSPC,        KC_L7_SP, KC_C_V
     ),
 
@@ -105,9 +107,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_EXTRA] = LAYOUT(
-        _______,  _______,  KC_COLN,  KC_ESC,   KC_C_N,         DF(2),    _______,  _______,  _______,  KC_PSCR,
+        _______,  _______,  KC_COLN,  KC_ESC,   KC_C_P,         DF(2),    _______,  _______,  _______,  KC_PSCR,
         _______,  KC_PERC,  KC_SLSH,  KC_ENT,   KC_C_Y,         DF(1),    KC_LGUI,  _______,  _______,  CW_TOGG,
-        _______,  _______,  _______,  KC_EXLM,  KC_C_P,         DF(0),    DF(5),    _______,  _______,  QK_BOOT,
+        _______,  _______,  _______,  KC_EXLM,  KC_C_N,         DF(0),    DF(5),    _______,  _______,  QK_BOOT,
                                       KC_TAB,   KC_DEL,         KC_NO,    _______
     )
 };
