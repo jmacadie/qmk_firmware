@@ -52,9 +52,10 @@ enum ferris_layers {
 #define KC_NUPIP LSFT(KC_NONUS_BACKSLASH) // ISO only!
 
 // Extra
-#define KC_C_N LCTL(KC_N)
-#define KC_C_Y LCTL(KC_Y)
-#define KC_C_P LCTL(KC_P)
+#define KC_C_N  LCTL(KC_N)
+#define KC_C_Y  LCTL(KC_Y)
+#define KC_C_P  LCTL(KC_P)
+#define KC_OS_S OSM(MOD_LSFT)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLMAK_DH] = LAYOUT(
@@ -94,8 +95,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_NUMBERS] = LAYOUT(
         _______,  _______,  _______,  _______,  _______,        KC_ASTR,  KC_7,     KC_8,     KC_9,     KC_PLUS,
-        _______,  KC_NO,    _______,  _______,  _______,        KC_DOT,   KC_0,     KC_1,     KC_2,     KC_3,
-        _______,  _______,  _______,  _______,  _______,        KC_SLASH, KC_4,     KC_5,     KC_6,     KC_MINUS,
+        _______,  KC_NO,    _______,  KC_E,     _______,        KC_DOT,   KC_0,     KC_1,     KC_2,     KC_3,
+        _______,  _______,  _______,  KC_PERC,  _______,        KC_SLASH, KC_4,     KC_5,     KC_6,     KC_MINUS,
                                       _______,  _______,        _______,  KC_EQUAL
     ),
 
@@ -108,7 +109,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_EXTRA] = LAYOUT(
         _______,  _______,  KC_COLN,  KC_ESC,   KC_C_P,         DF(2),    _______,  _______,  _______,  KC_PSCR,
-        _______,  KC_PERC,  KC_SLSH,  KC_ENT,   KC_C_Y,         DF(1),    KC_LGUI,  _______,  _______,  CW_TOGG,
+        _______,  KC_PERC,  KC_SLSH,  KC_ENT,   KC_C_Y,         DF(1),    KC_LGUI,  KC_OS_S,  _______,  CW_TOGG,
         _______,  _______,  _______,  KC_EXLM,  KC_C_N,         DF(0),    DF(5),    _______,  _______,  QK_BOOT,
                                       KC_TAB,   KC_DEL,         KC_NO,    _______
     )
