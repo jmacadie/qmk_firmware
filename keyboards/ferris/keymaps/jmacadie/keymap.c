@@ -38,6 +38,7 @@ enum ferris_layers {
 // Navigation
 #define KC_C_PUP LCTL(KC_PGUP)
 #define KC_C_PDN LCTL(KC_PGDN)
+#define KC_C_F6  LCTL(KC_F6)
 #define KC_S_TAB LSFT(KC_TAB)
 #define KC_OS_GU OSM(MOD_LGUI)
 #define KC_OS_SG OSM(MOD_LGUI | MOD_LSFT)
@@ -66,7 +67,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_NAVIGATION] = LAYOUT(
-        _______,  _______,  _______,  _______,  _______,        KC_C_U,   KC_C_PUP, KC_PGUP,  KC_C_PDN, _______,
+        _______,  _______,  _______,  _______,  _______,        KC_C_U,   KC_C_PUP, KC_PGUP,  KC_C_PDN, KC_F6,
         _______,  _______,  KC_NO,    _______,  KC_LALT,        KC_LEFT,  KC_DOWN,  KC_UP,    KC_RIGHT, KC_TAB,
         _______,  _______,  _______,  _______,  _______,        KC_C_D,   KC_HOME,  KC_PGDN,  KC_END,   KC_S_TAB,
                                       KC_OS_SG, _______,        _______,  KC_OS_GU
