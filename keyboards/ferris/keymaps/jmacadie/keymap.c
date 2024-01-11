@@ -110,7 +110,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_EXTRA] = LAYOUT(
         _______,  _______,  KC_COLN,  KC_ESC,   KC_C_P,         DF(2),    _______,  _______,  _______,  KC_PSCR,
-        _______,  KC_PERC,  KC_SLSH,  KC_ENT,   KC_C_Y,         DF(1),    KC_LGUI,  KC_OS_S,  _______,  CW_TOGG,
+        _______,  KC_PERC,  KC_SLSH,  KC_ENT,   KC_C_Y,         DF(1),    KC_LGUI,  KC_OS_S,  CW_TOGG,  _______,
         _______,  _______,  _______,  KC_EXLM,  KC_C_N,         DF(0),    DF(5),    _______,  _______,  QK_BOOT,
                                       KC_TAB,   KC_DEL,         KC_NO,    _______
     )
