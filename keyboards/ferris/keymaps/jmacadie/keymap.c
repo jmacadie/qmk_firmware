@@ -1,4 +1,5 @@
 #include QMK_KEYBOARD_H
+#include "features/achordion.h"
 
 enum ferris_layers {
     _COLMAK_DH,
@@ -135,4 +136,59 @@ bool caps_word_press_user(uint16_t keycode) {
         default:
             return false;  // Deactivate Caps Word.
     }
+}
+
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t* record) {
+  switch (keycode) {
+    // Increase the tapping term a little for slower ring and pinky fingers.
+    case KC_S_A:
+    case KC_S_O:
+    case KC_C_X:
+    case KC_C_DOT:
+    case KC_CS_Q:
+    case KC_CS_HY:
+      return TAPPING_TERM + 30;
+
+    case KC_L7_SP:
+      return TAPPING_TERM + 50;
+
+    default:
+      return TAPPING_TERM;
+  }
+}
+
+bool achordion_chord(uint16_t tap_hold_keycode,
+                     keyrecord_t* tap_hold_record,
+                     uint16_t other_keycode,
+                     keyrecord_t* other_record) {
+  // All layer switches are to be let through
+  switch (tap_hold_keycode) {
+    case KC_L1_S:
+    case KC_L2_E:
+    case KC_L3_T:
+    case KC_L4_N:
+    case KC_L5_R:
+    case KC_L6_I:
+    case KC_L7_SP:
+      return true;
+
+    default:
+      break;
+  }
+
+  // Otherwise, follow the opposite hands rule.
+  return achordion_opposite_hands(tap_hold_record, other_record);
+}
+
+void matrix_scan_user(void) {
+    achordion_task();
+}
+
+bool process_record_user(uint16_t keycode, keyrecord_t* record) {
+    if (!process_achordion(keycode, record)) {
+        return false;
+    }
+    // Your macros ...
+
+    return true;
 }
