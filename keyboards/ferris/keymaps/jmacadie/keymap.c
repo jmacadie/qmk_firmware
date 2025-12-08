@@ -29,7 +29,6 @@ enum ferris_layers {
 #define KC_L1_S  LT(_NAVIGATION, KC_S)
 #define KC_L3_T  LT(_RIGHT_SYM,  KC_T)
 #define KC_L4_N  LT(_LEFT_SYM,   KC_N)
-#define KC_L2_E  LT(_MOUSE,      KC_E)
 #define KC_L6_I  LT(_FUNCTION,   KC_I)
 #define KC_L7_SP LT(_EXTRA,      KC_SPC)
 // Copy & Paste
@@ -63,7 +62,7 @@ enum ferris_layers {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLMAK_DH] = LAYOUT(
         KC_CS_Q,  KC_W,     KC_F,     KC_P,     KC_B,           KC_J,     KC_L,     KC_U,     KC_Y,     KC_CS_HY,
-        KC_S_A,   KC_L5_R,  KC_L1_S,  KC_L3_T,  KC_G,           KC_M,     KC_L4_N,  KC_L2_E,  KC_L6_I,  KC_S_O,
+        KC_S_A,   KC_L5_R,  KC_L1_S,  KC_L3_T,  KC_G,           KC_M,     KC_L4_N,  KC_E,     KC_L6_I,  KC_S_O,
         KC_Z,     KC_C_X,   KC_A_C,   KC_G_D,   KC_V,           KC_K,     KC_G_H,   KC_A_COM, KC_C_DOT, KC_UNDS,
                                       KC_C_C,   KC_BSPC,        KC_L7_SP, KC_C_V
     ),
@@ -73,13 +72,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,  _______,  KC_NO,    KC_C_S,   KC_LALT,        KC_LEFT,  KC_DOWN,  KC_UP,    KC_RIGHT, KC_TAB,
         _______,  _______,  _______,  KC_LCTL,  _______,        KC_C_D,   KC_HOME,  KC_PGDN,  KC_END,   KC_S_TAB,
                                       KC_OS_SG, _______,        _______,  KC_OS_GU
-    ),
-
-    [_MOUSE] = LAYOUT(
-        _______,  _______,  KC_WH_U,  _______,  _______,        _______,  _______,  _______,  _______,  _______,
-        KC_MS_L,  KC_MS_D,  KC_MS_U,  KC_MS_R,  _______,        _______,  KC_BTN1,  KC_NO,    KC_BTN2,  _______,
-        _______,  KC_WH_L,  KC_WH_D,  KC_WH_R,  _______,        _______,  _______,  _______,  _______,  _______,
-                                      _______,  _______,        _______,  _______
     ),
 
     [_RIGHT_SYM] = LAYOUT(
@@ -111,9 +103,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_EXTRA] = LAYOUT(
-        _______,  _______,  KC_COLN,  KC_ESC,   KC_C_P,         DF(2),    _______,  _______,  _______,  KC_PSCR,
-        _______,  KC_PERC,  KC_SLSH,  KC_ENT,   KC_C_Y,         DF(1),    KC_LGUI,  KC_OS_S,  CW_TOGG,  _______,
-        _______,  _______,  _______,  KC_EXLM,  KC_C_N,         DF(0),    DF(5),    _______,  _______,  QK_BOOT,
+        _______,  _______,  KC_COLN,  KC_ESC,   KC_C_P,         KC_ESC,   _______,  _______,  _______,  KC_PSCR,
+        _______,  KC_PERC,  KC_SLSH,  KC_ENT,   KC_C_Y,         KC_ENT,   KC_LGUI,  KC_OS_S,  CW_TOGG,  KC_CAPS,
+        _______,  _______,  _______,  KC_EXLM,  KC_C_N,         KC_TAB,   _______,  _______,  _______,  QK_BOOT,
                                       KC_TAB,   KC_DEL,         KC_NO,    _______
     )
 };
@@ -164,7 +156,6 @@ bool achordion_chord(uint16_t tap_hold_keycode,
   // All layer switches are to be let through
   switch (tap_hold_keycode) {
     case KC_L1_S:
-    case KC_L2_E:
     case KC_L3_T:
     case KC_L4_N:
     case KC_L5_R:

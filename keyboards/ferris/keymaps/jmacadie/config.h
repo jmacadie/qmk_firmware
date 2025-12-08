@@ -18,8 +18,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #pragma once
 
 #define EE_HANDS
-// #define INIT_EE_HANDS_LEFT
-#define INIT_EE_HANDS_RIGHT
+#define INIT_EE_HANDS_LEFT
+//#define INIT_EE_HANDS_RIGHT
 
 // Set the mouse settings to a comfortable speed/accuracy trade-off,
 // assuming a screen refresh rate of 60 Htz or higher
